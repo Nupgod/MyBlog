@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorization Page</title>
+    <link rel="stylesheet" href="/assets/css/auto.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/main">Main</a>
+        <a href="/blog/">Blog</a>
+        <a href="/admin/log-in">Admin</a>
+    </div>
+    <div class="auth-container">
+        <div class="auth-image-container">
+            <img src="/assets/images/amazing_logo.png" alt="Logo" class="auth-image">
+        </div>
+        <br>
+        <br>
+        <h2>Authorization</h2>
+        <br>
+        <br>
+        <form method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <h4 style="color: rgb(255, 251, 0);">{{.Error}}</h4>
+            <input type="submit" value="Log in">
+        </form>
+    </div>
+    <div class="footer">
+        <p>Created by Nupgod &copy; 2024</p>
+    </div>
+</body>
+</html>

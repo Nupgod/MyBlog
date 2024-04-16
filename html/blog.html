@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/assets/css/auto.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+</head>
+<body class="parallax">
+    <div class="navbar">
+        <a href="/main">Main</a>
+        <a href="/blog/">Blog</a>
+        <a href="/admin/log-in">Admin</a>
+    </div>
+    <div class="parallax-content">
+        <div class="container">
+                    {{if eq .pagination.TotalPages 0}}
+                    <div class="post-block">
+                        <h3 class="post-title">The blog is currently empty</h3>
+                    </div>
+                    {{end}}
+                    {{range .pagination.Posts}}
+                        <div class="post-block">
+                            <h1 class="post-title">{{.Title}}</h1>
+                            <div class="post-content">{{.Text | safeHTML}}</div>
+                            <p class="post-date">Created at: {{.Time}}</p>
+                        </div>
+                    {{end}}
+                    <div class="pagination">
+                        {{if gt .pagination.PreviousPage 0}}
+                            <a href="/blog?page={{.pagination.PreviousPage}}">Previous</a>
+                            <p>Page {{.pagination.CurrentPage}} of {{.pagination.TotalPages}}</p>
+                        {{end}}
+                        {{if lt .pagination.CurrentPage .pagination.TotalPages}}
+                            <a href="/blog?page={{.pagination.NextPage}}">Next</a>
+                        {{end}}
+                    </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Created by Nupgod &copy; 2024</p>
+    </div>
+    <script>
+            window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            var parallax = document.querySelector('.parallax-content');
+            
+            // Adjust the speed of the parallax background
+            parallax.style.backgroundPositionY = (scrollPosition * 0.5) + 'px'; // Adjust the speed here
+        });
+    </script>
+</body>
+</html>

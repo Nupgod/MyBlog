@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    
+}
+body.parallax {
+    overflow-x: hidden;
+    background-attachment:  fixed;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    z-index: 10;
+}
+.navbar a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 100px; 
+    padding-bottom: 60px; 
+}
+
+
+.auth-container {
+    background-image: url(../images/stone-texture.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.589);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.auth-image-container {
+    margin-bottom: 20px;
+    overflow: hidden; 
+    max-width: 200px;
+    margin: auto;
+}
+
+.auth-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.auth-container h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-container label {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 80%;
+}
+
+.auth-container input[type="submit"] {
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #be0231;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    width: 40%;
+}
+
+.auth-container input[type="submit"]:hover {
+    background-color: #8d0023;
+    color: #000000;
+}
+.auth-container textarea {
+    border: none;
+    outline: none;
+}
+.err-msg {
+    color: rgb(255, 251, 0);
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/stone-texture.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 60%;
+    margin-bottom: 20px;
+}
+
+.post-block {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    background-color: #646363;
+    color: #ffffff;
+    min-width: 300px;
+}
+.post-title {
+    margin-bottom: 10px;
+}
+.post-content {
+    margin-bottom: 10px;
+}
+
+.post-content a {
+    color: #2400a8;
+}
+
+.post-date {
+    font-size: 14px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination p {
+    color: #ffffff;
+}
+
+.pagination a {
+    margin: 10px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ece9e9;
+    padding: 5px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #79046f;
+    color: #ffffff;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-top: 50px;
+}
+.welcome-message h1 {
+    color: #ffffff;
+}
+.welcome-message img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #393a3a;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    min-height: 40px;
+    z-index: 10;
+    margin-top: 60px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+    .auth-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .auth-container input[type="text"],
+    .auth-container input[type="password"],
+    .auth-container input[type="submit"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    .auth-container {
+        max-width: 600px;
+        padding: 30px;
+    }
+
+    .auth-container input[type="text"],
+    .auth-container input[type="password"],
+    .auth-container input[type="submit"] {
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+}

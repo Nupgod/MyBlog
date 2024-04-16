@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/assets/css/auto.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/main">Main</a>
+        <a href="/blog/">Blog</a>
+        <a href="/admin/log-in">Admin</a>
+    </div>
+    <div class="auth-container" style="max-width: 600px;">
+        <h2>Create post</h2>
+        <form method="post">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+            <label for="content">Main text:</label><br>
+            <textarea id="content" name="content" rows="20" cols="65" required></textarea><br>
+            <h4 class="err-msg">{{.Error}}</h4>
+            <input type="submit" value="Post">
+        </form>
+    </div>
+    <div class="footer">
+        <p>Created by Nupgod &copy; 2024</p>
+    </div>
+</body>
+</html>
